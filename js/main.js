@@ -84,7 +84,7 @@ function noescape(){
 function health(){
     for (let i = 0; i < localStorage.getItem("heart"); i++){
         const image = document.createElement('img');
-        image.setAttribute('src', '../img/heart.webp');
+        image.setAttribute('src', 'img/heart.webp');
         image.setAttribute('width', '50px');
         image.setAttribute('alt','heart');
         image.setAttribute('id','heart-img');
