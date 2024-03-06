@@ -96,7 +96,7 @@ function delHealth(){
     localStorage.setItem('heart',localStorage.getItem('heart')-1)
     document.getElementById('heart-img').remove()
     if (localStorage.getItem('heart') <= 0){
-        window.location.replace("../game-over.html") 
+        window.location.replace("game-over.html") 
     }
 }
 
