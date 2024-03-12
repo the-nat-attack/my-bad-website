@@ -100,6 +100,28 @@ function delHealth(){
     }
 }
 
+function hint(value){
+    $("#myModal").click()
+    document.getElementById('hint-q').remove()
+    const hint = document.createElement('p')
+    if (value===2){
+        hint.innerHTML = "Hover to reveal the true position."
+    }
+    else if (value===3){
+        hint.innerHTML = "There is only one 'button' on this page."
+    }
+    else if (value===4){
+        hint.innerHTML = "Sometimes a change in scenery will reveal something new."
+    }
+    hint.classList.add('hint-reveal')
+    document.getElementById("hint-section").appendChild(hint)
+    second+= 30; 
+    if (second >= 60) { 
+        minute++; 
+        second -= 60; 
+    } 
+}
+
 function pageLoad(){
     stopWatch()
     health()

@@ -93,6 +93,39 @@
     </div>
   </div>
 
+    <!-- Button to Open the hint Modal -->
+    <div class="container" id="continue-btn">
+      <div id="hint-section" style="text-align:right;">
+          <button type="button" class="hint" id="hint-q" data-bs-toggle="modal" data-bs-target="#myModal">?</button>
+      </div>
+    </div>
+  
+    <!-- The Hint Modal -->
+    <div class="modal fade modal-dialog" id="myModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+  
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Need a hint?</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+  
+          <!-- Modal body -->
+          <div class="modal-body">
+            I can offer you a hint, but it will add 30 seconds to your time. The clock is still ticking, choose quickly.
+          </div>
+  
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="hint(3)">Hint</button>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+
 
 
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
