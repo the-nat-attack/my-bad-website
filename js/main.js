@@ -132,6 +132,27 @@ function hint(value){
     } 
 }
 
+function showStatus(){
+    var status = document.getElementById("status")
+    if (minute < 1){
+        status.innerHTML = "You are Gold Tier"
+        status.classList.add("gold")
+    }
+    else if (minute < 2){
+        status.innerHTML = "You are Silver Tier"
+        status.classList.add("silver")
+    }
+    else if (minute < 3){
+        status.innerHTML = "You are Bronze Tier"
+        status.classList.add("bronze")
+    }
+    else if (minute > 3){
+        status.innerHTML = "Try to get a faster time to move up the tier list!"
+        status.classList.add("no-status")
+    }
+    document.getElementById("status").appendChild(status)
+}
+
 function pageLoad(){
     stopWatch()
     health()
@@ -140,6 +161,7 @@ function pageLoad(){
 function endpageLoad(){
     stopWatch()
     stopBtn()
+    showStatus()
 }
 
 

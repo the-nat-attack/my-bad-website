@@ -105,3 +105,22 @@
 .rotate-cone4:hover{
   rotate:calc(270deg)!important
 }
+
+.gold, .silver, .bronze, .no-status{
+  padding:10px 20px;
+  width:max-content;
+  margin:10px auto;
+}
+
+.gold{
+  background-color:#ffd700;
+}
+
+.silver{
+  background-color:#c0c0c0;
+}
+
+.bronze{
+  background-color:#cd7f32;
+}
+
