@@ -23,7 +23,13 @@ function resetWatch() {
     minute = 0; 
     second = 0; 
     count = 0; 
-    localStorage.setItem('heart', 3)
+    if (localStorage.getItem("bonusheart")!= null){
+        localStorage.setItem('heart', 4)
+        localStorage.removeItem("bonusheart")
+    }
+    else{
+        localStorage.setItem('heart', 3)
+    }
     localStorage.removeItem("minString")
     localStorage.removeItem("secString")
     localStorage.removeItem("countString")
@@ -98,6 +104,10 @@ function delHealth(){
     if (localStorage.getItem('heart') <= 0){
         window.location.replace("game-over.html") 
     }
+}
+
+function bonusHeart(){
+    localStorage.setItem("bonusheart", true)
 }
 
 function hint(value){
