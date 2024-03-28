@@ -123,6 +123,9 @@ function hint(value){
     else if (value===4){
         hint.innerHTML = "Sometimes a change in scenery will reveal something new."
     }
+    else if (value===5){
+        hint.innerHTML = "It isn't 'clicking' for you? Try holding something down..."
+    }
     hint.classList.add('hint-reveal')
     document.getElementById("hint-section").appendChild(hint)
     second+= 30; 
@@ -130,6 +133,7 @@ function hint(value){
         minute++; 
         second -= 60; 
     } 
+
 }
 
 function showStatus(){
