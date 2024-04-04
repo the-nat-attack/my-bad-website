@@ -106,6 +106,10 @@ function delHealth(){
     }
 }
 
+function delHealthAd(event){
+    event.stopPropagation()
+}
+
 function bonusHeart(){
     localStorage.setItem("bonusheart", true)
 }
@@ -118,13 +122,19 @@ function hint(value){
         hint.innerHTML = "Hover to reveal the true position."
     }
     else if (value===3){
-        hint.innerHTML = "There is only one 'button' on this page."
+        hint.innerHTML = "There is only one 'button' on this page. Well, besides this hint containing 'button'."
     }
     else if (value===4){
         hint.innerHTML = "Sometimes a change in scenery will reveal something new."
     }
     else if (value===5){
         hint.innerHTML = "It isn't 'clicking' for you? Try holding something down..."
+    }
+    else if (value===6){
+        hint.innerHTML = "To crack the code, look at the code (seen while hovering over an image)."
+    }
+    else if (value===7){
+        hint.innerHTML = "I uhhh... didn't think anyone would click a hint on this page. I can't really help you with this one besides saying 'be accurate.'"
     }
     hint.classList.add('hint-reveal')
     document.getElementById("hint-section").appendChild(hint)

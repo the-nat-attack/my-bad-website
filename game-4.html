@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Cupcake Time!</title>
+  <title>Here Lies a Lie.</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,7 +11,6 @@
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
@@ -43,7 +42,7 @@
             <a class="nav-link nav-link-ltr" href="#" onclick="noescape()">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-ltr active" aria-current="page" href="#" onclick="noescape()">Residence</a>
+            <a class="nav-link nav-link-ltr active" aria-current="page" href="game-5.html" onclick="noescape()">Residence</a>
           </li>
           <li class="nav-item">
             <a class="nav-link nav-link-ltr" href="#" onclick="noescape()">Lodgings</a>
@@ -79,27 +78,64 @@
   </div>
 
 
-  <div class="container" id="home" style="height:250px!important">
+  <div class="container" id="home" style="height:450px!important;">
     <div class="row">
       <div class="col-lg-6 col-md-8">
-        <h3>You've earned a cupcake!<br>All you have to do is find it.</h3>
-
-        <div style="margin-top:20px;margin-bottom:40px;">
-          <p>Use the box to change the background color.</p>
-          <input type="color" id="head" name="head" value="#ffffff">
+        <h3 style="margin-bottom:20px;">There is one liar among us.</h3>
+      </div>
+      
+      <ul class="image-hover">
+        <li>
+          <div class="box">
+            <a onclick="delHealth()">
+              <img src="https://images.unsplash.com/photo-1608474213100-79a7317b368d?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+              <div class="text">
+                Dave Doe<br><span><code>&lt;img src="img/person-1" alt="Man with backpack and blue jacket hiking in the woods."&gt;</code></span>
+              </div>
+              </img>
+            </a>
         </div>
-      </div>
+        </li>
+        
+        <li>
+          <div class="box">
+            <a onclick="delHealth()">
+              <img src="https://images.unsplash.com/photo-1508867743401-21ad68d105b1?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+              <div class="text">
+                Kate Koe<br><span><code>&lt;img src="img/person-2" alt="Woman in grey hat sitting by a lake looking at the mountains."&gt;</code></span>
+              </div>
+              </img>
+            </a>
+        </div>
+        </li>
+      
+        <li>
+          <div class="box">
+            <a onclick="delHealth()">
+              <img src="https://images.unsplash.com/photo-1542404423-a7af0f59cad8?q=80&w=3119&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+              <div class="text">
+                Paul Poe<br><span><code>&lt;img src="img/person-3" alt="Man with backpack walking through Paris on a rainy day."&gt;</code></span>
+              </div>
+              </img>
+            </a>
+        </div>
+        </li>
 
-      <div class="col-lg-6 col-md-8">
-        <a href="finish.html"><img src="img/cupcake.png" style="cursor:pointer;float:right;" width="80px"></a>
-      </div>
-      <div>
-      <img src="img/donut.png" style="cursor:pointer" width="80px" onclick="delHealth()">
-      <img src="img/dog.png" style="cursor:pointer" width="80px" onclick="delHealth()">
-      <img src="img/tree.png" style="cursor:pointer" width="80px" onclick="delHealth()">
-      <img src="img/flower.png" style="cursor:pointer" width="80px" onclick="delHealth()">
-      <img src="img/moon.png" style="cursor:pointer" width="80px" onclick="delHealth()">
-      </div>
+        <li>
+          <div class="box">
+            <a href="game-5.html">
+              <img src="https://images.unsplash.com/photo-1701555695141-b6d2ee993d5f?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+              <div class="text">
+                Ruby Roe<br><span><code>&lt;img src="img/person-4" alt="Woman in white hat enjoying the beach on a sunny day."&gt;</code></span>
+              </div>
+              </img>
+            </a>
+        </div>
+        </li>
+
+        </ul>
+
+
     </div>
   </div>
 
@@ -129,22 +165,13 @@
           <!-- Modal footer -->
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" onclick="hint(4)">Hint</button>
+            <button type="button" class="btn btn-primary" onclick="hint(6)">Hint</button>
           </div>
   
         </div>
       </div>
     </div>
 
-  <script>
-    document.getElementById('head').addEventListener('change', () => {
-        document.body.style.backgroundColor = document.getElementById('head').value;
-    })
-
-    document.getElementById('head').addEventListener('input', () => {
-        document.body.style.backgroundColor = document.getElementById('head').value;
-    })
-  </script>
 
 
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>

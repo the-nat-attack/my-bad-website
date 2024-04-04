@@ -124,3 +124,68 @@
   background-color:#cd7f32;
 }
 
+/*image hover stuff*/
+.image-hover{
+  margin:150px auto;
+  width:80%;
+  cursor:pointer;
+}
+
+.image-hover li{
+  list-style:none;
+  float:left;
+  text-align:center;
+  width:25%;
+  height:450px;
+}
+
+.image-hover li a{
+  text-decoration:none;
+  color:#212529;
+}
+
+.image-hover li a img{
+  width:98%;
+  height:350px;
+  transition:.5s;
+  object-fit:cover;
+  padding:0% 2%;
+}
+
+.image-hover li a .text{
+  opacity:0;
+  transition:.5s;
+  transform:translateY(70px);
+  font-size:30px;
+  font-weight:bold;
+  text-transform:uppercase;
+  font-style:italic;
+}
+
+.image-hover li a .text span{
+  font-style:normal;
+  font-weight:400;
+  font-size:16px;
+}
+
+.image-hover li:hover img{
+  transform:translateY(-20px) scale(.8);
+}
+.image-hover li:hover .text{
+  transform:translateY(-35px);
+  opacity:1;
+}
+
+.alert-dismissible .btn-close{
+  padding:4px!important;
+}
+
+.btn-close {
+  width:0!important;
+  height:0!important;
+  cursor: default!important;
+}
+
+.btn-close:hover{
+  opacity:50%!important;
+}

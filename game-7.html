@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>...</title>
+  <title>Cupcake Time!</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,6 +11,7 @@
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
@@ -78,11 +79,26 @@
   </div>
 
 
-  <div class="container" id="home" style="height:50px!important">
+  <div class="container" id="home" style="height:250px!important">
     <div class="row">
-      <div style="text-align:center;">
-        <img src="img/icons8-loading.gif" style="margin-bottom:20px;">
-        <h3>Please hold while the next section loads.</h3>
+      <div class="col-lg-6 col-md-8">
+        <h3>You've earned a cupcake!<br>All you have to do is find it.</h3>
+
+        <div style="margin-top:20px;margin-bottom:40px;">
+          <p>Use the box to change the background color.</p>
+          <input type="color" id="head" name="head" value="#ffffff">
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-8">
+        <a href="finish.html"><img src="img/cupcake.png" style="cursor:default;float:right;" width="80px"></a>
+      </div>
+      <div>
+      <img src="img/donut.png" style="cursor:default" width="80px" onclick="delHealth()">
+      <img src="img/dog.png" style="cursor:default" width="80px" onclick="delHealth()">
+      <img src="img/tree.png" style="cursor:default" width="80px" onclick="delHealth()">
+      <img src="img/flower.png" style="cursor:default" width="80px" onclick="delHealth()">
+      <img src="img/moon.png" style="cursor:default" width="80px" onclick="delHealth()">
       </div>
     </div>
   </div>
@@ -113,7 +129,7 @@
           <!-- Modal footer -->
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" onclick="hint(5)">Hint</button>
+            <button type="button" class="btn btn-primary" onclick="hint(4)">Hint</button>
           </div>
   
         </div>
@@ -121,24 +137,15 @@
     </div>
 
   <script>
-    var mouseIsDown = false;
-    var idTimeout;
+    document.getElementById('head').addEventListener('change', () => {
+        document.body.style.backgroundColor = document.getElementById('head').value;
+    })
 
-    window.addEventListener('mousedown', function() {
-      mouseIsDown = true;
-      idTimeout = setTimeout(function() {
-        if(mouseIsDown) {
-          window.location.replace("game-6.html")
-        }
-      }, 3000);
-    });
-
-    window.addEventListener('mouseup', function() {
-      clearTimeout(idTimeout);
-      mouseIsDown = false;
-    });
-
+    document.getElementById('head').addEventListener('input', () => {
+        document.body.style.backgroundColor = document.getElementById('head').value;
+    })
   </script>
+
 
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

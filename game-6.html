@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>...</title>
+  <title>Ad Blocker is Disabled</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -78,12 +78,53 @@
   </div>
 
 
-  <div class="container" id="home" style="height:50px!important">
+  <div class="container" id="home" style="height:450px!important;">
     <div class="row">
-      <div style="text-align:center;">
-        <img src="img/icons8-loading.gif" style="margin-bottom:20px;">
-        <h3>Please hold while the next section loads.</h3>
+      <div class="col-lg-6 col-md-8">
+        <h3 style="margin-bottom:20px;">It's the advertisement apocolypse!<br>Get rid of them without catching a virus.</h3>
       </div>
+    </div>
+    <div class="row">
+      <div style="width:100%" class="col-md-4 alert alert-danger alert-dismissible fade show" role="alert" onclick="delHealth()">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button onclick="" style="z-index:2" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+     
+      <div style="width:50%" class="alert alert-warning alert-dismissible fade show" role="alert" onclick="delHealth()">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <div style="width:50%" class="alert alert-success alert-dismissible fade show" role="alert" onclick="delHealth()">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <div style="width:33.33%" class="alert alert-primary alert-dismissible fade show" role="alert" onclick="delHealth()">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <div style="width:33.33%" class="alert alert-danger alert-dismissible fade show" role="alert" onclick="delHealth()">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <div style="width:33.33%" class="alert alert-primary alert-dismissible fade show" role="alert" onclick="delHealth()">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <div style="width:50%" class="alert alert-success alert-dismissible fade show" role="alert" onclick="delHealth()">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <div style="width:50%" class="alert alert-warning alert-dismissible fade show" role="alert" onclick="delHealth()">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
     </div>
   </div>
 
@@ -92,6 +133,10 @@
       <div id="hint-section" style="text-align:right;">
           <button type="button" class="hint" id="hint-q" data-bs-toggle="modal" data-bs-target="#myModal">?</button>
       </div>
+      <!--continue button fills on complettion-->
+        <div class="row" style="text-align:right;">
+          <a id="cont-btn-txt" class="btn-arrow"></a>
+        </div>
     </div>
   
     <!-- The Hint Modal -->
@@ -113,39 +158,39 @@
           <!-- Modal footer -->
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" onclick="hint(5)">Hint</button>
+            <button type="button" class="btn btn-primary" onclick="hint(7)">Hint</button>
           </div>
   
         </div>
       </div>
     </div>
 
-  <script>
-    var mouseIsDown = false;
-    var idTimeout;
-
-    window.addEventListener('mousedown', function() {
-      mouseIsDown = true;
-      idTimeout = setTimeout(function() {
-        if(mouseIsDown) {
-          window.location.replace("game-6.html")
-        }
-      }, 3000);
-    });
-
-    window.addEventListener('mouseup', function() {
-      clearTimeout(idTimeout);
-      mouseIsDown = false;
-    });
-
-  </script>
-
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    var elements = document.getElementsByClassName("btn-close");
 
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].addEventListener("click", function(e) {
+          var senderElement = e.target;
+          e.stopPropagation();
+          checkDone()
+    });
+    }
+
+    function checkDone(){
+      if (document.getElementsByClassName("btn-close").length === 2) {
+        document.getElementById('hint-section').remove()
+        var cont = document.getElementById('cont-btn-txt')
+        cont.href = "game-7.html"
+        cont.innerHTML = "Continue →"
+      }
+    }
+
+  </script>
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
